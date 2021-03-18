@@ -27,6 +27,7 @@ while True:
     cameraB = cv2.getTrackbarPos("Brightness","Result")
     cap.set(10, cameraB)
     reg, img = cap.read()
+    img = cv2.flip(img,1)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     scaleVal = 1 +(cv2.getTrackbarPos("Scale","Result")/1000)
     neig = cv2.getTrackbarPos("Neig", "Result")
